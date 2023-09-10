@@ -1,0 +1,32 @@
+{
+  "marketingCampaignManagerApp": {
+    "filterPossibleValue": {
+      "home": {
+        "title": "Filter Possible Values",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Filter Possible Value",
+        "createOrEditLabel": "Create or edit a Filter Possible Value",
+        "notFound": "No Filter Possible Values found"
+      },
+      "created": "A new Filter Possible Value is created with identifier {{ param }}",
+      "updated": "A Filter Possible Value is updated with identifier {{ param }}",
+      "deleted": "A Filter Possible Value is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Filter Possible Value {{ id }}?"
+      },
+      "detail": {
+        "title": "Filter Possible Value"
+      },
+      "id": "ID",
+      "uiName": "Ui Name",
+      "attributeValue": "Attribute Value",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "filter": "Filter",
+      "segmentFilter": "Segment Filter"
+    }
+  }
+}

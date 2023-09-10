@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity FilterMetadata.
+    -->
+    <changeSet id="20230910103607-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="mapping_id"
+                                 baseTableName="filter_metadata"
+                                 constraintName="fk_filter_metadata__mapping_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="filter_source_mapping"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,34 @@
+{
+  "marketingCampaignManagerApp": {
+    "filterMetadata": {
+      "home": {
+        "title": "Filter Metadata",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Filter Metadata",
+        "createOrEditLabel": "Create or edit a Filter Metadata",
+        "notFound": "No Filter Metadata found"
+      },
+      "created": "A new Filter Metadata is created with identifier {{ param }}",
+      "updated": "A Filter Metadata is updated with identifier {{ param }}",
+      "deleted": "A Filter Metadata is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Filter Metadata {{ id }}?"
+      },
+      "detail": {
+        "title": "Filter Metadata"
+      },
+      "id": "ID",
+      "name": "Name",
+      "filterType": "Filter Type",
+      "uiType": "Ui Type",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "mapping": "Mapping",
+      "filterPossibleValue": "Filter Possible Value",
+      "segmentFilter": "Segment Filter"
+    }
+  }
+}

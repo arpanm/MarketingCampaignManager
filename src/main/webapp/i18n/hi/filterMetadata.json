@@ -1,0 +1,34 @@
+{
+  "marketingCampaignManagerApp": {
+    "filterMetadata": {
+      "home": {
+        "title": "FilterMetadata",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Filter Metadata बनाएँ",
+        "createOrEditLabel": "Filter Metadata बनाएँ या संपादित करें",
+        "notFound": "No Filter Metadata found"
+      },
+      "created": "एक नया Filter Metadata [identifier: {{ param }}] तैयार है",
+      "updated": "एक Filter Metadata [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Filter Metadata [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Filter Metadata [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Filter Metadata"
+      },
+      "id": "ID",
+      "name": "Name",
+      "filterType": "Filter Type",
+      "uiType": "Ui Type",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "mapping": "Mapping",
+      "filterPossibleValue": "Filter Possible Value",
+      "segmentFilter": "Segment Filter"
+    }
+  }
+}

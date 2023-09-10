@@ -1,0 +1,11 @@
+{
+  "marketingCampaignManagerApp": {
+    "FilterUiType": {
+      "null": "",
+      "Checkbox": "Checkbox",
+      "RadioButton": "RadioButton",
+      "SingleDropDown": "SingleDropDown",
+      "MultiDropDown": "MultiDropDown"
+    }
+  }
+}

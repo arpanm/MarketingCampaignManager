@@ -1,0 +1,32 @@
+{
+  "marketingCampaignManagerApp": {
+    "templateParam": {
+      "home": {
+        "title": "TemplateParams",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Template Param बनाएँ",
+        "createOrEditLabel": "Template Param बनाएँ या संपादित करें",
+        "notFound": "No Template Params found"
+      },
+      "created": "एक नया Template Param [identifier: {{ param }}] तैयार है",
+      "updated": "एक Template Param [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Template Param [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Template Param [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Template Param"
+      },
+      "id": "ID",
+      "tag": "Tag",
+      "paramType": "Param Type",
+      "replacedByAtrribute": "Replaced By Atrribute",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "template": "Template"
+    }
+  }
+}

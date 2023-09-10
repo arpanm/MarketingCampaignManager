@@ -1,0 +1,32 @@
+{
+  "marketingCampaignManagerApp": {
+    "filterPossibleValue": {
+      "home": {
+        "title": "FilterPossibleValues",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Filter Possible Value बनाएँ",
+        "createOrEditLabel": "Filter Possible Value बनाएँ या संपादित करें",
+        "notFound": "No Filter Possible Values found"
+      },
+      "created": "एक नया Filter Possible Value [identifier: {{ param }}] तैयार है",
+      "updated": "एक Filter Possible Value [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Filter Possible Value [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Filter Possible Value [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Filter Possible Value"
+      },
+      "id": "ID",
+      "uiName": "Ui Name",
+      "attributeValue": "Attribute Value",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "filter": "Filter",
+      "segmentFilter": "Segment Filter"
+    }
+  }
+}

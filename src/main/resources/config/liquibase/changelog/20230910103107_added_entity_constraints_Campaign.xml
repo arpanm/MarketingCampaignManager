@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Campaign.
+    -->
+    <changeSet id="20230910103107-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="segment_id"
+                                 baseTableName="campaign"
+                                 constraintName="fk_campaign__segment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="segment"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="template_id"
+                                 baseTableName="campaign"
+                                 constraintName="fk_campaign__template_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="template"
+                                 />
+    </changeSet>
+</databaseChangeLog>

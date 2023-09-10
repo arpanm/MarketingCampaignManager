@@ -1,0 +1,54 @@
+{
+  "applications": ["MarketingCampaignManager"],
+  "changelogDate": "20230910103407",
+  "dto": "mapstruct",
+  "entityTableName": "template_param",
+  "fields": [
+    {
+      "fieldName": "tag",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paramType",
+      "fieldType": "ParamType",
+      "fieldValues": "Attribute,Coupon"
+    },
+    {
+      "fieldName": "replacedByAtrribute",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "TemplateParam",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "template",
+      "otherEntityRelationshipName": "templateParam",
+      "relationshipName": "template",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

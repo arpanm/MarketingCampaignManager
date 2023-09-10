@@ -1,0 +1,11 @@
+id;name;channel;schedule;start_date;end_date;is_active;created_by;created_on;updated_by;updated_on
+1;yahoo;Email;Monthly;2023-09-09;2023-09-09;false;15121;2023-09-09;31372;2023-09-09
+2;wail unpleasant fickle;PushNotification;Hourly;2023-09-10;2023-09-10;false;21299;2023-09-09;20085;2023-09-09
+3;through unfolded;Email;Weekly;2023-09-10;2023-09-09;true;29212;2023-09-09;17916;2023-09-10
+4;shocked zinc sad;SMS;Weekly;2023-09-10;2023-09-09;true;5167;2023-09-10;16588;2023-09-09
+5;spirited towards sheepishly;Email;Daily;2023-09-09;2023-09-09;false;17069;2023-09-09;30194;2023-09-09
+6;why aside;SMS;Weekly;2023-09-10;2023-09-09;false;14070;2023-09-09;12517;2023-09-09
+7;around ugh;WhatsApp;Onetimem;2023-09-09;2023-09-10;true;6859;2023-09-09;29442;2023-09-10
+8;whenever;Email;Weekly;2023-09-09;2023-09-09;true;32696;2023-09-09;20882;2023-09-09
+9;knottily who;SMS;Onetimem;2023-09-10;2023-09-10;true;12387;2023-09-09;16000;2023-09-09
+10;phew although utter;PushNotification;Hourly;2023-09-10;2023-09-09;true;25550;2023-09-10;16642;2023-09-09

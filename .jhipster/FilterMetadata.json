@@ -1,0 +1,61 @@
+{
+  "applications": ["MarketingCampaignManager"],
+  "changelogDate": "20230910103607",
+  "dto": "mapstruct",
+  "entityTableName": "filter_metadata",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "filterType",
+      "fieldType": "FilterType",
+      "fieldValues": "SingleSelect,MultiSelect"
+    },
+    {
+      "fieldName": "uiType",
+      "fieldType": "FilterUiType",
+      "fieldValues": "Checkbox,RadioButton,SingleDropDown,MultiDropDown"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "FilterMetadata",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "filterSourceMapping",
+      "relationshipName": "mapping",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "filterPossibleValue",
+      "otherEntityRelationshipName": "filter",
+      "relationshipName": "filterPossibleValue",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

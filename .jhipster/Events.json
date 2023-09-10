@@ -1,0 +1,49 @@
+{
+  "applications": ["MarketingCampaignManager"],
+  "changelogDate": "20230910103507",
+  "dto": "mapstruct",
+  "entityTableName": "events",
+  "fields": [
+    {
+      "fieldName": "count",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "eventType",
+      "fieldType": "EventType",
+      "fieldValues": "Send,Open,Click,PayInit,PaySuccess"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "Events",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "campaign",
+      "relationshipName": "campaign",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
