@@ -1,0 +1,9 @@
+{
+  "marketingCampaignManagerApp": {
+    "FilterType": {
+      "null": "",
+      "SingleSelect": "SingleSelect",
+      "MultiSelect": "MultiSelect"
+    }
+  }
+}

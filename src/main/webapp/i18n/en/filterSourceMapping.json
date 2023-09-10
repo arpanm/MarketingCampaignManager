@@ -1,0 +1,31 @@
+{
+  "marketingCampaignManagerApp": {
+    "filterSourceMapping": {
+      "home": {
+        "title": "Filter Source Mappings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Filter Source Mapping",
+        "createOrEditLabel": "Create or edit a Filter Source Mapping",
+        "notFound": "No Filter Source Mappings found"
+      },
+      "created": "A new Filter Source Mapping is created with identifier {{ param }}",
+      "updated": "A Filter Source Mapping is updated with identifier {{ param }}",
+      "deleted": "A Filter Source Mapping is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Filter Source Mapping {{ id }}?"
+      },
+      "detail": {
+        "title": "Filter Source Mapping"
+      },
+      "id": "ID",
+      "sourceTable": "Source Table",
+      "atrributeMapping": "Atrribute Mapping",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "filterMetadata": "Filter Metadata"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity FilterPossibleValue.
+    -->
+    <changeSet id="20230910103807-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="filter_id"
+                                 baseTableName="filter_possible_value"
+                                 constraintName="fk_filter_possible_value__filter_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="filter_metadata"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="segment_filter_id"
+                                 baseTableName="filter_possible_value"
+                                 constraintName="fk_filter_possible_value__segment_filter_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="segment_filter"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,33 @@
+{
+  "marketingCampaignManagerApp": {
+    "segmentFilter": {
+      "home": {
+        "title": "Segment Filters",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Segment Filter",
+        "createOrEditLabel": "Create or edit a Segment Filter",
+        "notFound": "No Segment Filters found"
+      },
+      "created": "A new Segment Filter is created with identifier {{ param }}",
+      "updated": "A Segment Filter is updated with identifier {{ param }}",
+      "deleted": "A Segment Filter is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Segment Filter {{ id }}?"
+      },
+      "detail": {
+        "title": "Segment Filter"
+      },
+      "id": "ID",
+      "name": "Name",
+      "title": "Title",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "filter": "Filter",
+      "values": "Values",
+      "segment": "Segment"
+    }
+  }
+}

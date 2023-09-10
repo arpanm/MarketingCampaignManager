@@ -1,0 +1,9 @@
+{
+  "marketingCampaignManagerApp": {
+    "ParamType": {
+      "null": "",
+      "Attribute": "Attribute",
+      "Coupon": "Coupon"
+    }
+  }
+}

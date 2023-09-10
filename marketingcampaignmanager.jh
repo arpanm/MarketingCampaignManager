@@ -1,0 +1,197 @@
+
+entity Campaign {
+	name String,
+    channel ChannelType,
+    schedule ScheduleType,
+    startDate LocalDate,
+    endDate LocalDate,
+    isActive Boolean,
+    createdBy Long,
+    createdOn LocalDate,
+    updatedBy Long,
+    updatedOn LocalDate
+}
+
+enum ChannelType {
+	Email,
+    PushNotification,
+    SMS,
+    WhatsApp
+}
+
+enum ScheduleType {
+	Hourly,
+    Daily,
+    Weekly,
+    Monthly,
+    Onetimem
+}
+
+entity Segment {
+    name String,
+    sourceTable String,
+    isActive Boolean,
+    createdBy Long,
+    createdOn LocalDate,
+    updatedBy Long,
+    updatedOn LocalDate
+}
+
+relationship ManyToOne {
+    Campaign{segment} to Segment
+}
+
+entity Template {
+    name String,
+    title String,
+    subTitle String,
+    body String,
+    imageUrl String,
+    isActive Boolean,
+    createdBy Long,
+    createdOn LocalDate,
+    updatedBy Long,
+    updatedOn LocalDate
+}
+
+relationship ManyToOne {
+    Campaign{template} to Template
+}
+
+entity TemplateParam {
+	tag String,
+    paramType ParamType,
+    replacedByAtrribute String,
+    isActive Boolean,
+    createdBy Long,
+    createdOn LocalDate,
+    updatedBy Long,
+    updatedOn LocalDate
+}
+
+enum ParamType {
+	Attribute,
+    Coupon
+}
+
+relationship ManyToMany {
+    Template to TemplateParam
+}
+
+
+entity Events {
+	count Long,
+	eventType EventType,
+    isActive Boolean,
+    createdBy Long,
+    createdOn LocalDate,
+    updatedBy Long,
+    updatedOn LocalDate
+}
+
+enum EventType {
+	Send,
+    Open,
+    Click,
+    PayInit,
+    PaySuccess
+}
+
+relationship OneToMany {
+    Campaign to Events{campaign}
+}
+
+entity FilterMetadata {
+	name String,
+	filterType FilterType,
+    uiType FilterUiType,
+    isActive Boolean,
+    createdBy Long,
+    createdOn LocalDate,
+    updatedBy Long,
+    updatedOn LocalDate
+}
+
+enum FilterType {
+	SingleSelect,
+    MultiSelect
+}
+
+enum FilterUiType {
+	Checkbox,
+    RadioButton,
+    SingleDropDown,
+    MultiDropDown
+}
+
+entity FilterSourceMapping {
+	sourceTable String,
+    atrributeMapping String,
+	isActive Boolean,
+    createdBy Long,
+    createdOn LocalDate,
+    updatedBy Long,
+    updatedOn LocalDate
+}
+
+relationship OneToOne {
+    FilterMetadata{mapping} to FilterSourceMapping
+}
+
+entity FilterPossibleValue {
+	uiName String,
+    attributeValue String,
+	isActive Boolean,
+    createdBy Long,
+    createdOn LocalDate,
+    updatedBy Long,
+    updatedOn LocalDate
+}
+
+relationship OneToMany {
+    FilterMetadata to FilterPossibleValue{filter}
+}
+
+entity SegmentFilter {
+	name String,
+    title String,
+    isActive Boolean,
+    createdBy Long,
+    createdOn LocalDate,
+    updatedBy Long,
+    updatedOn LocalDate
+}
+
+relationship OneToMany {
+    Segment to SegmentFilter{segment}
+}
+
+relationship OneToOne {
+    SegmentFilter{filter} to FilterMetadata
+}
+
+relationship OneToMany {
+    SegmentFilter{values} to FilterPossibleValue
+}
+
+
+
+application {
+  config {
+    baseName MarketingCampaignManager
+    applicationType monolith
+    serverPort 8080
+    prodDatabaseType mysql
+    clientFramework react
+    clientPackageManager npm
+    authenticationType jwt
+    buildTool maven
+    enableSwaggerCodegen true
+    packageName com.marketing.campaign
+    languages [en, bn, hi]
+  }
+  entities *
+  dto * with mapstruct
+  paginate * with infinite-scroll
+  service all with serviceImpl
+}

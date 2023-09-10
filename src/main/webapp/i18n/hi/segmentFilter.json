@@ -1,0 +1,33 @@
+{
+  "marketingCampaignManagerApp": {
+    "segmentFilter": {
+      "home": {
+        "title": "SegmentFilters",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Segment Filter बनाएँ",
+        "createOrEditLabel": "Segment Filter बनाएँ या संपादित करें",
+        "notFound": "No Segment Filters found"
+      },
+      "created": "एक नया Segment Filter [identifier: {{ param }}] तैयार है",
+      "updated": "एक Segment Filter [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Segment Filter [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Segment Filter [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Segment Filter"
+      },
+      "id": "ID",
+      "name": "Name",
+      "title": "Title",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "filter": "Filter",
+      "values": "Values",
+      "segment": "Segment"
+    }
+  }
+}

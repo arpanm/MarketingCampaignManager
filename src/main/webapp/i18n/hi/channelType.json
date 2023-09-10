@@ -1,0 +1,11 @@
+{
+  "marketingCampaignManagerApp": {
+    "ChannelType": {
+      "null": "",
+      "Email": "Email",
+      "PushNotification": "PushNotification",
+      "SMS": "SMS",
+      "WhatsApp": "WhatsApp"
+    }
+  }
+}

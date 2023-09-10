@@ -1,0 +1,49 @@
+{
+  "applications": ["MarketingCampaignManager"],
+  "changelogDate": "20230910103207",
+  "dto": "mapstruct",
+  "entityTableName": "segment",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sourceTable",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "Segment",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "segmentFilter",
+      "otherEntityRelationshipName": "segment",
+      "relationshipName": "segmentFilter",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,75 @@
+{
+  "applications": ["MarketingCampaignManager"],
+  "changelogDate": "20230910103107",
+  "dto": "mapstruct",
+  "entityTableName": "campaign",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "channel",
+      "fieldType": "ChannelType",
+      "fieldValues": "Email,PushNotification,SMS,WhatsApp"
+    },
+    {
+      "fieldName": "schedule",
+      "fieldType": "ScheduleType",
+      "fieldValues": "Hourly,Daily,Weekly,Monthly,Onetimem"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "Campaign",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "events",
+      "otherEntityRelationshipName": "campaign",
+      "relationshipName": "events",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "segment",
+      "relationshipName": "segment",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "template",
+      "relationshipName": "template",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

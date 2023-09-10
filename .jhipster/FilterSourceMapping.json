@@ -1,0 +1,41 @@
+{
+  "applications": ["MarketingCampaignManager"],
+  "changelogDate": "20230910103707",
+  "dto": "mapstruct",
+  "entityTableName": "filter_source_mapping",
+  "fields": [
+    {
+      "fieldName": "sourceTable",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "atrributeMapping",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "FilterSourceMapping",
+  "pagination": "infinite-scroll",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

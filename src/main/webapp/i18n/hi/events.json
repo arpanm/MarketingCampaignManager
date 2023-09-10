@@ -1,0 +1,31 @@
+{
+  "marketingCampaignManagerApp": {
+    "events": {
+      "home": {
+        "title": "Events",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Events बनाएँ",
+        "createOrEditLabel": "Events बनाएँ या संपादित करें",
+        "notFound": "No Events found"
+      },
+      "created": "एक नया Events [identifier: {{ param }}] तैयार है",
+      "updated": "एक Events [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Events [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Events [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Events"
+      },
+      "id": "ID",
+      "count": "Count",
+      "eventType": "Event Type",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "campaign": "Campaign"
+    }
+  }
+}

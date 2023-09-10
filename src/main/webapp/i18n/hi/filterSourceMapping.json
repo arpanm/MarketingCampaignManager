@@ -1,0 +1,31 @@
+{
+  "marketingCampaignManagerApp": {
+    "filterSourceMapping": {
+      "home": {
+        "title": "FilterSourceMappings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Filter Source Mapping बनाएँ",
+        "createOrEditLabel": "Filter Source Mapping बनाएँ या संपादित करें",
+        "notFound": "No Filter Source Mappings found"
+      },
+      "created": "एक नया Filter Source Mapping [identifier: {{ param }}] तैयार है",
+      "updated": "एक Filter Source Mapping [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Filter Source Mapping [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Filter Source Mapping [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Filter Source Mapping"
+      },
+      "id": "ID",
+      "sourceTable": "Source Table",
+      "atrributeMapping": "Atrribute Mapping",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "filterMetadata": "Filter Metadata"
+    }
+  }
+}
