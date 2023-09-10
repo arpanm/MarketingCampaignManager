@@ -1,0 +1,31 @@
+{
+  "marketingCampaignManagerApp": {
+    "approvalStatus": {
+      "home": {
+        "title": "ApprovalStatuses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Approval Status बनाएँ",
+        "createOrEditLabel": "Approval Status बनाएँ या संपादित करें",
+        "notFound": "No Approval Statuses found"
+      },
+      "created": "एक नया Approval Status [identifier: {{ param }}] तैयार है",
+      "updated": "एक Approval Status [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Approval Status [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Approval Status [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Approval Status"
+      },
+      "id": "ID",
+      "statusType": "Status Type",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "approvedBy": "Approved By",
+      "campaign": "Campaign"
+    }
+  }
+}

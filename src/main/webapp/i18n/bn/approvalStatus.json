@@ -1,0 +1,31 @@
+{
+  "marketingCampaignManagerApp": {
+    "approvalStatus": {
+      "home": {
+        "title": "Approval Statuses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Approval Status",
+        "createOrEditLabel": "Create or edit a Approval Status",
+        "notFound": "No Approval Statuses found"
+      },
+      "created": "A new Approval Status is created with identifier {{ param }}",
+      "updated": "A Approval Status is updated with identifier {{ param }}",
+      "deleted": "A Approval Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Approval Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Approval Status"
+      },
+      "id": "ID",
+      "statusType": "Status Type",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On",
+      "approvedBy": "Approved By",
+      "campaign": "Campaign"
+    }
+  }
+}

@@ -8,11 +8,14 @@ import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateT
 import { mapIdList } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
+import { IApprovalStatus } from 'app/shared/model/approval-status.model';
+import { getEntities as getApprovalStatuses } from 'app/entities/approval-status/approval-status.reducer';
 import { ISegment } from 'app/shared/model/segment.model';
 import { getEntities as getSegments } from 'app/entities/segment/segment.reducer';
 import { ITemplate } from 'app/shared/model/template.model';
 import { getEntities as getTemplates } from 'app/entities/template/template.reducer';
 import { ICampaign } from 'app/shared/model/campaign.model';
+import { VerticalType } from 'app/shared/model/enumerations/vertical-type.model';
 import { ChannelType } from 'app/shared/model/enumerations/channel-type.model';
 import { ScheduleType } from 'app/shared/model/enumerations/schedule-type.model';
 import { getEntity, updateEntity, createEntity, reset } from './campaign.reducer';
@@ -25,12 +28,14 @@ export const CampaignUpdate = () => {
   const { id } = useParams<'id'>();
   const isNew = id === undefined;
 
+  const approvalStatuses = useAppSelector(state => state.approvalStatus.entities);
   const segments = useAppSelector(state => state.segment.entities);
   const templates = useAppSelector(state => state.template.entities);
   const campaignEntity = useAppSelector(state => state.campaign.entity);
   const loading = useAppSelector(state => state.campaign.loading);
   const updating = useAppSelector(state => state.campaign.updating);
   const updateSuccess = useAppSelector(state => state.campaign.updateSuccess);
+  const verticalTypeValues = Object.keys(VerticalType);
   const channelTypeValues = Object.keys(ChannelType);
   const scheduleTypeValues = Object.keys(ScheduleType);
 
@@ -43,6 +48,7 @@ export const CampaignUpdate = () => {
       dispatch(getEntity(id));
     }
 
+    dispatch(getApprovalStatuses({}));
     dispatch(getSegments({}));
     dispatch(getTemplates({}));
   }, []);
@@ -57,6 +63,7 @@ export const CampaignUpdate = () => {
     const entity = {
       ...campaignEntity,
       ...values,
+      approvalStatus: approvalStatuses.find(it => it.id.toString() === values.approvalStatus.toString()),
       segment: segments.find(it => it.id.toString() === values.segment.toString()),
       template: templates.find(it => it.id.toString() === values.template.toString()),
     };
@@ -72,9 +79,11 @@ export const CampaignUpdate = () => {
     isNew
       ? {}
       : {
+          vertial: 'JMD',
           channel: 'Email',
           schedule: 'Hourly',
           ...campaignEntity,
+          approvalStatus: campaignEntity?.approvalStatus?.id,
           segment: campaignEntity?.segment?.id,
           template: campaignEntity?.template?.id,
         };
@@ -111,6 +120,19 @@ export const CampaignUpdate = () => {
                 data-cy="name"
                 type="text"
               />
+              <ValidatedField
+                label={translate('marketingCampaignManagerApp.campaign.vertial')}
+                id="campaign-vertial"
+                name="vertial"
+                data-cy="vertial"
+                type="select"
+              >
+                {verticalTypeValues.map(verticalType => (
+                  <option value={verticalType} key={verticalType}>
+                    {translate('marketingCampaignManagerApp.VerticalType.' + verticalType)}
+                  </option>
+                ))}
+              </ValidatedField>
               <ValidatedField
                 label={translate('marketingCampaignManagerApp.campaign.channel')}
                 id="campaign-channel"
@@ -187,6 +209,22 @@ export const CampaignUpdate = () => {
                 data-cy="updatedOn"
                 type="date"
               />
+              <ValidatedField
+                id="campaign-approvalStatus"
+                name="approvalStatus"
+                data-cy="approvalStatus"
+                label={translate('marketingCampaignManagerApp.campaign.approvalStatus')}
+                type="select"
+              >
+                <option value="" key="0" />
+                {approvalStatuses
+                  ? approvalStatuses.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
               <ValidatedField
                 id="campaign-segment"
                 name="segment"

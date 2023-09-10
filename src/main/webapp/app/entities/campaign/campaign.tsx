@@ -136,6 +136,10 @@ export const Campaign = () => {
                     <Translate contentKey="marketingCampaignManagerApp.campaign.name">Name</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('name')} />
                   </th>
+                  <th className="hand" onClick={sort('vertial')}>
+                    <Translate contentKey="marketingCampaignManagerApp.campaign.vertial">Vertial</Translate>{' '}
+                    <FontAwesomeIcon icon={getSortIconByFieldName('vertial')} />
+                  </th>
                   <th className="hand" onClick={sort('channel')}>
                     <Translate contentKey="marketingCampaignManagerApp.campaign.channel">Channel</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('channel')} />
@@ -173,6 +177,10 @@ export const Campaign = () => {
                     <FontAwesomeIcon icon={getSortIconByFieldName('updatedOn')} />
                   </th>
                   <th>
+                    <Translate contentKey="marketingCampaignManagerApp.campaign.approvalStatus">Approval Status</Translate>{' '}
+                    <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th>
                     <Translate contentKey="marketingCampaignManagerApp.campaign.segment">Segment</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th>
@@ -192,6 +200,9 @@ export const Campaign = () => {
                     </td>
                     <td>{campaign.name}</td>
                     <td>
+                      <Translate contentKey={`marketingCampaignManagerApp.VerticalType.${campaign.vertial}`} />
+                    </td>
+                    <td>
                       <Translate contentKey={`marketingCampaignManagerApp.ChannelType.${campaign.channel}`} />
                     </td>
                     <td>
@@ -209,6 +220,13 @@ export const Campaign = () => {
                     <td>{campaign.updatedBy}</td>
                     <td>
                       {campaign.updatedOn ? <TextFormat type="date" value={campaign.updatedOn} format={APP_LOCAL_DATE_FORMAT} /> : null}
+                    </td>
+                    <td>
+                      {campaign.approvalStatus ? (
+                        <Link to={`/approval-status/${campaign.approvalStatus.id}`}>{campaign.approvalStatus.id}</Link>
+                      ) : (
+                        ''
+                      )}
                     </td>
                     <td>{campaign.segment ? <Link to={`/segment/${campaign.segment.id}`}>{campaign.segment.id}</Link> : ''}</td>
                     <td>{campaign.template ? <Link to={`/template/${campaign.template.id}`}>{campaign.template.id}</Link> : ''}</td>

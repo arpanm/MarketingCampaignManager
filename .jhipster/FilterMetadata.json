@@ -9,6 +9,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "desc",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "filterType",
       "fieldType": "FilterType",
       "fieldValues": "SingleSelect,MultiSelect"

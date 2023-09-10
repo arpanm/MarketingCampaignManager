@@ -16,7 +16,9 @@
         "filterMetadata": "Filter Metadata",
         "filterSourceMapping": "Filter Source Mapping",
         "filterPossibleValue": "Filter Possible Value",
-        "segmentFilter": "Segment Filter"
+        "segmentFilter": "Segment Filter",
+        "approvalAuthority": "Approval Authority",
+        "approvalStatus": "Approval Status"
       },
       "account": {
         "main": "खाता",

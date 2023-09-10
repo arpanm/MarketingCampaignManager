@@ -30,6 +30,9 @@ public class FilterMetadata implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "jhi_desc")
+    private String desc;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "filter_type")
     private FilterType filterType;
@@ -93,6 +96,19 @@ public class FilterMetadata implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDesc() {
+        return this.desc;
+    }
+
+    public FilterMetadata desc(String desc) {
+        this.setDesc(desc);
+        return this;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public FilterType getFilterType() {
@@ -274,6 +290,7 @@ public class FilterMetadata implements Serializable {
         return "FilterMetadata{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
+            ", desc='" + getDesc() + "'" +
             ", filterType='" + getFilterType() + "'" +
             ", uiType='" + getUiType() + "'" +
             ", isActive='" + getIsActive() + "'" +

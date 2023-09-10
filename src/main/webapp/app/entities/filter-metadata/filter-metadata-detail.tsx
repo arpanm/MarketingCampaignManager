@@ -39,6 +39,12 @@ export const FilterMetadataDetail = () => {
           </dt>
           <dd>{filterMetadataEntity.name}</dd>
           <dt>
+            <span id="desc">
+              <Translate contentKey="marketingCampaignManagerApp.filterMetadata.desc">Desc</Translate>
+            </span>
+          </dt>
+          <dd>{filterMetadataEntity.desc}</dd>
+          <dt>
             <span id="filterType">
               <Translate contentKey="marketingCampaignManagerApp.filterMetadata.filterType">Filter Type</Translate>
             </span>

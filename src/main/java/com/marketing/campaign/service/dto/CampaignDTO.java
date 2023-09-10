@@ -2,6 +2,7 @@ package com.marketing.campaign.service.dto;
 
 import com.marketing.campaign.domain.enumeration.ChannelType;
 import com.marketing.campaign.domain.enumeration.ScheduleType;
+import com.marketing.campaign.domain.enumeration.VerticalType;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
@@ -15,6 +16,8 @@ public class CampaignDTO implements Serializable {
     private Long id;
 
     private String name;
+
+    private VerticalType vertial;
 
     private ChannelType channel;
 
@@ -34,6 +37,8 @@ public class CampaignDTO implements Serializable {
 
     private LocalDate updatedOn;
 
+    private ApprovalStatusDTO approvalStatus;
+
     private SegmentDTO segment;
 
     private TemplateDTO template;
@@ -52,6 +57,14 @@ public class CampaignDTO implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public VerticalType getVertial() {
+        return vertial;
+    }
+
+    public void setVertial(VerticalType vertial) {
+        this.vertial = vertial;
     }
 
     public ChannelType getChannel() {
@@ -126,6 +139,14 @@ public class CampaignDTO implements Serializable {
         this.updatedOn = updatedOn;
     }
 
+    public ApprovalStatusDTO getApprovalStatus() {
+        return approvalStatus;
+    }
+
+    public void setApprovalStatus(ApprovalStatusDTO approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
     public SegmentDTO getSegment() {
         return segment;
     }
@@ -169,6 +190,7 @@ public class CampaignDTO implements Serializable {
         return "CampaignDTO{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
+            ", vertial='" + getVertial() + "'" +
             ", channel='" + getChannel() + "'" +
             ", schedule='" + getSchedule() + "'" +
             ", startDate='" + getStartDate() + "'" +
@@ -178,6 +200,7 @@ public class CampaignDTO implements Serializable {
             ", createdOn='" + getCreatedOn() + "'" +
             ", updatedBy=" + getUpdatedBy() +
             ", updatedOn='" + getUpdatedOn() + "'" +
+            ", approvalStatus=" + getApprovalStatus() +
             ", segment=" + getSegment() +
             ", template=" + getTemplate() +
             "}";

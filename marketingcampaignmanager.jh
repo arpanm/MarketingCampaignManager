@@ -1,6 +1,7 @@
 
 entity Campaign {
 	name String,
+    vertial VerticalType,
     channel ChannelType,
     schedule ScheduleType,
     startDate LocalDate,
@@ -103,6 +104,7 @@ relationship OneToMany {
 
 entity FilterMetadata {
 	name String,
+    desc String,
 	filterType FilterType,
     uiType FilterUiType,
     isActive Boolean,
@@ -174,7 +176,46 @@ relationship OneToMany {
     SegmentFilter{values} to FilterPossibleValue
 }
 
+entity ApprovalAuthority {
+	userId Long,
+    vertial VerticalType,
+    isActive Boolean,
+    createdBy Long,
+    createdOn LocalDate,
+    updatedBy Long,
+    updatedOn LocalDate
+}
 
+enum VerticalType {
+	JMD,
+    PBG,
+    Ajio,
+    RCPL
+}
+
+entity ApprovalStatus {
+	statusType StatusType,
+    isActive Boolean,
+    createdBy Long,
+    createdOn LocalDate,
+    updatedBy Long,
+    updatedOn LocalDate
+}
+
+enum StatusType {
+	Draft,
+    Pending,
+    Approved,
+    Rejected
+}
+
+relationship OneToOne {
+    Campaign{approvalStatus} to ApprovalStatus
+}
+
+relationship ManyToOne {
+    ApprovalStatus{approvedBy} to ApprovalAuthority
+}
 
 application {
   config {
@@ -182,6 +223,7 @@ application {
     applicationType monolith
     serverPort 8080
     prodDatabaseType mysql
+    devDatabaseType h2Disk
     clientFramework react
     clientPackageManager npm
     authenticationType jwt

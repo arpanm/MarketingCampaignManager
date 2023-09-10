@@ -1,0 +1,42 @@
+{
+  "applications": ["MarketingCampaignManager"],
+  "changelogDate": "20230910114041",
+  "dto": "mapstruct",
+  "entityTableName": "approval_authority",
+  "fields": [
+    {
+      "fieldName": "userId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "vertial",
+      "fieldType": "VerticalType",
+      "fieldValues": "JMD,PBG,Ajio,RCPL"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "ApprovalAuthority",
+  "pagination": "infinite-scroll",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

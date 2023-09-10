@@ -7,6 +7,7 @@ import { FilterUiType } from 'app/shared/model/enumerations/filter-ui-type.model
 export interface IFilterMetadata {
   id?: number;
   name?: string | null;
+  desc?: string | null;
   filterType?: keyof typeof FilterType | null;
   uiType?: keyof typeof FilterUiType | null;
   isActive?: boolean | null;

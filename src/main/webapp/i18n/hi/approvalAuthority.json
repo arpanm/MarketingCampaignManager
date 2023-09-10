@@ -1,0 +1,30 @@
+{
+  "marketingCampaignManagerApp": {
+    "approvalAuthority": {
+      "home": {
+        "title": "ApprovalAuthorities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "नया Approval Authority बनाएँ",
+        "createOrEditLabel": "Approval Authority बनाएँ या संपादित करें",
+        "notFound": "No Approval Authorities found"
+      },
+      "created": "एक नया Approval Authority [identifier: {{ param }}] तैयार है",
+      "updated": "एक Approval Authority [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Approval Authority [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Approval Authority [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Approval Authority"
+      },
+      "id": "ID",
+      "userId": "User Id",
+      "vertial": "Vertial",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On"
+    }
+  }
+}

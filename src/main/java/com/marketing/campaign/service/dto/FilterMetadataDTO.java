@@ -16,6 +16,8 @@ public class FilterMetadataDTO implements Serializable {
 
     private String name;
 
+    private String desc;
+
     private FilterType filterType;
 
     private FilterUiType uiType;
@@ -46,6 +48,14 @@ public class FilterMetadataDTO implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public FilterType getFilterType() {
@@ -139,6 +149,7 @@ public class FilterMetadataDTO implements Serializable {
         return "FilterMetadataDTO{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
+            ", desc='" + getDesc() + "'" +
             ", filterType='" + getFilterType() + "'" +
             ", uiType='" + getUiType() + "'" +
             ", isActive='" + getIsActive() + "'" +

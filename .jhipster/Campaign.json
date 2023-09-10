@@ -9,6 +9,11 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "vertial",
+      "fieldType": "VerticalType",
+      "fieldValues": "JMD,PBG,Ajio,RCPL"
+    },
+    {
       "fieldName": "channel",
       "fieldType": "ChannelType",
       "fieldValues": "Email,PushNotification,SMS,WhatsApp"
@@ -50,6 +55,12 @@
   "name": "Campaign",
   "pagination": "infinite-scroll",
   "relationships": [
+    {
+      "otherEntityName": "approvalStatus",
+      "relationshipName": "approvalStatus",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
     {
       "otherEntityName": "events",
       "otherEntityRelationshipName": "campaign",

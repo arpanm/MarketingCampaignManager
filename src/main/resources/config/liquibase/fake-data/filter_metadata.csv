@@ -1,11 +1,11 @@
-id;name;filter_type;ui_type;is_active;created_by;created_on;updated_by;updated_on
-1;dearly;SingleSelect;SingleDropDown;false;1907;2023-09-09;9412;2023-09-10
-2;pimple of;MultiSelect;Checkbox;false;24597;2023-09-10;20772;2023-09-09
-3;widow er spit;MultiSelect;SingleDropDown;true;20158;2023-09-09;1339;2023-09-09
-4;permeate so;MultiSelect;RadioButton;false;28100;2023-09-10;843;2023-09-10
-5;jade thrift um;SingleSelect;SingleDropDown;true;26177;2023-09-09;20161;2023-09-09
-6;gosh apud hearty;MultiSelect;RadioButton;false;11217;2023-09-09;10522;2023-09-09
-7;plenty truthfully;SingleSelect;Checkbox;false;14261;2023-09-09;17210;2023-09-09
-8;utterly yum regarding;SingleSelect;Checkbox;true;19659;2023-09-10;13764;2023-09-10
-9;glorify disguised;MultiSelect;Checkbox;false;427;2023-09-09;27475;2023-09-10
-10;whether thoughtfully gloat;MultiSelect;RadioButton;true;4037;2023-09-10;28522;2023-09-10
+id;name;jhi_desc;filter_type;ui_type;is_active;created_by;created_on;updated_by;updated_on
+1;dearly;kiddingly;MultiSelect;MultiDropDown;true;27221;2023-09-09;16649;2023-09-09
+2;yack;apprehensive;MultiSelect;RadioButton;true;13007;2023-09-09;32293;2023-09-09
+3;plenty;ecstatic;MultiSelect;SingleDropDown;true;17680;2023-09-10;15602;2023-09-09
+4;subdued;stink;SingleSelect;Checkbox;true;31096;2023-09-09;13282;2023-09-09
+5;under selfishly;stipple;MultiSelect;MultiDropDown;false;12254;2023-09-09;32237;2023-09-10
+6;dose;repentant functional;MultiSelect;RadioButton;true;28001;2023-09-09;691;2023-09-09
+7;before love;gray kooky tent;MultiSelect;Checkbox;true;7517;2023-09-09;3291;2023-09-10
+8;maple;disguised phooey;MultiSelect;RadioButton;false;5342;2023-09-09;4239;2023-09-09
+9;thoughtfully gloat by;assurance;SingleSelect;SingleDropDown;true;9918;2023-09-10;31099;2023-09-10
+10;stamp scornful;hunting;SingleSelect;RadioButton;false;11903;2023-09-09;15484;2023-09-09

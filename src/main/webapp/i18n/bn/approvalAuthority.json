@@ -1,0 +1,30 @@
+{
+  "marketingCampaignManagerApp": {
+    "approvalAuthority": {
+      "home": {
+        "title": "Approval Authorities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Approval Authority",
+        "createOrEditLabel": "Create or edit a Approval Authority",
+        "notFound": "No Approval Authorities found"
+      },
+      "created": "A new Approval Authority is created with identifier {{ param }}",
+      "updated": "A Approval Authority is updated with identifier {{ param }}",
+      "deleted": "A Approval Authority is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Approval Authority {{ id }}?"
+      },
+      "detail": {
+        "title": "Approval Authority"
+      },
+      "id": "ID",
+      "userId": "User Id",
+      "vertial": "Vertial",
+      "isActive": "Is Active",
+      "createdBy": "Created By",
+      "createdOn": "Created On",
+      "updatedBy": "Updated By",
+      "updatedOn": "Updated On"
+    }
+  }
+}
