@@ -1,0 +1,45 @@
+{
+  "applications": ["MarketingCampaignManager"],
+  "changelogDate": "20230910114042",
+  "dto": "mapstruct",
+  "entityTableName": "approval_status",
+  "fields": [
+    {
+      "fieldName": "statusType",
+      "fieldType": "StatusType",
+      "fieldValues": "Draft,Pending,Approved,Rejected"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "ApprovalStatus",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "approvalAuthority",
+      "relationshipName": "approvedBy",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,11 @@
+{
+  "marketingCampaignManagerApp": {
+    "VerticalType": {
+      "null": "",
+      "JMD": "JMD",
+      "PBG": "PBG",
+      "Ajio": "Ajio",
+      "RCPL": "RCPL"
+    }
+  }
+}

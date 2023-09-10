@@ -1,0 +1,11 @@
+{
+  "marketingCampaignManagerApp": {
+    "StatusType": {
+      "null": "",
+      "Draft": "Draft",
+      "Pending": "Pending",
+      "Approved": "Approved",
+      "Rejected": "Rejected"
+    }
+  }
+}

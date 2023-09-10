@@ -17,6 +17,9 @@
             <column name="name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="jhi_desc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="filter_type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -63,6 +66,7 @@
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
             <column name="name" type="string"/>
+            <column name="jhi_desc" type="string"/>
             <column name="filter_type" type="string"/>
             <column name="ui_type" type="string"/>
             <column name="is_active" type="boolean"/>

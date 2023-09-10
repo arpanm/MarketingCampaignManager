@@ -47,7 +47,7 @@ public class Events implements Serializable {
     private LocalDate updatedOn;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "events", "segment", "template" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "approvalStatus", "events", "segment", "template" }, allowSetters = true)
     private Campaign campaign;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

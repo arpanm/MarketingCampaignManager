@@ -9,6 +9,7 @@ import com.marketing.campaign.IntegrationTest;
 import com.marketing.campaign.domain.Campaign;
 import com.marketing.campaign.domain.enumeration.ChannelType;
 import com.marketing.campaign.domain.enumeration.ScheduleType;
+import com.marketing.campaign.domain.enumeration.VerticalType;
 import com.marketing.campaign.repository.CampaignRepository;
 import com.marketing.campaign.service.dto.CampaignDTO;
 import com.marketing.campaign.service.mapper.CampaignMapper;
@@ -37,6 +38,9 @@ class CampaignResourceIT {
 
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_NAME = "BBBBBBBBBB";
+
+    private static final VerticalType DEFAULT_VERTIAL = VerticalType.JMD;
+    private static final VerticalType UPDATED_VERTIAL = VerticalType.PBG;
 
     private static final ChannelType DEFAULT_CHANNEL = ChannelType.Email;
     private static final ChannelType UPDATED_CHANNEL = ChannelType.PushNotification;
@@ -94,6 +98,7 @@ class CampaignResourceIT {
     public static Campaign createEntity(EntityManager em) {
         Campaign campaign = new Campaign()
             .name(DEFAULT_NAME)
+            .vertial(DEFAULT_VERTIAL)
             .channel(DEFAULT_CHANNEL)
             .schedule(DEFAULT_SCHEDULE)
             .startDate(DEFAULT_START_DATE)
@@ -115,6 +120,7 @@ class CampaignResourceIT {
     public static Campaign createUpdatedEntity(EntityManager em) {
         Campaign campaign = new Campaign()
             .name(UPDATED_NAME)
+            .vertial(UPDATED_VERTIAL)
             .channel(UPDATED_CHANNEL)
             .schedule(UPDATED_SCHEDULE)
             .startDate(UPDATED_START_DATE)
@@ -147,6 +153,7 @@ class CampaignResourceIT {
         assertThat(campaignList).hasSize(databaseSizeBeforeCreate + 1);
         Campaign testCampaign = campaignList.get(campaignList.size() - 1);
         assertThat(testCampaign.getName()).isEqualTo(DEFAULT_NAME);
+        assertThat(testCampaign.getVertial()).isEqualTo(DEFAULT_VERTIAL);
         assertThat(testCampaign.getChannel()).isEqualTo(DEFAULT_CHANNEL);
         assertThat(testCampaign.getSchedule()).isEqualTo(DEFAULT_SCHEDULE);
         assertThat(testCampaign.getStartDate()).isEqualTo(DEFAULT_START_DATE);
@@ -190,6 +197,7 @@ class CampaignResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(campaign.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
+            .andExpect(jsonPath("$.[*].vertial").value(hasItem(DEFAULT_VERTIAL.toString())))
             .andExpect(jsonPath("$.[*].channel").value(hasItem(DEFAULT_CHANNEL.toString())))
             .andExpect(jsonPath("$.[*].schedule").value(hasItem(DEFAULT_SCHEDULE.toString())))
             .andExpect(jsonPath("$.[*].startDate").value(hasItem(DEFAULT_START_DATE.toString())))
@@ -214,6 +222,7 @@ class CampaignResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(campaign.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
+            .andExpect(jsonPath("$.vertial").value(DEFAULT_VERTIAL.toString()))
             .andExpect(jsonPath("$.channel").value(DEFAULT_CHANNEL.toString()))
             .andExpect(jsonPath("$.schedule").value(DEFAULT_SCHEDULE.toString()))
             .andExpect(jsonPath("$.startDate").value(DEFAULT_START_DATE.toString()))
@@ -246,6 +255,7 @@ class CampaignResourceIT {
         em.detach(updatedCampaign);
         updatedCampaign
             .name(UPDATED_NAME)
+            .vertial(UPDATED_VERTIAL)
             .channel(UPDATED_CHANNEL)
             .schedule(UPDATED_SCHEDULE)
             .startDate(UPDATED_START_DATE)
@@ -270,6 +280,7 @@ class CampaignResourceIT {
         assertThat(campaignList).hasSize(databaseSizeBeforeUpdate);
         Campaign testCampaign = campaignList.get(campaignList.size() - 1);
         assertThat(testCampaign.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testCampaign.getVertial()).isEqualTo(UPDATED_VERTIAL);
         assertThat(testCampaign.getChannel()).isEqualTo(UPDATED_CHANNEL);
         assertThat(testCampaign.getSchedule()).isEqualTo(UPDATED_SCHEDULE);
         assertThat(testCampaign.getStartDate()).isEqualTo(UPDATED_START_DATE);
@@ -360,11 +371,12 @@ class CampaignResourceIT {
 
         partialUpdatedCampaign
             .name(UPDATED_NAME)
-            .channel(UPDATED_CHANNEL)
-            .startDate(UPDATED_START_DATE)
+            .vertial(UPDATED_VERTIAL)
+            .schedule(UPDATED_SCHEDULE)
+            .endDate(UPDATED_END_DATE)
             .isActive(UPDATED_IS_ACTIVE)
             .createdBy(UPDATED_CREATED_BY)
-            .createdOn(UPDATED_CREATED_ON);
+            .updatedOn(UPDATED_UPDATED_ON);
 
         restCampaignMockMvc
             .perform(
@@ -379,15 +391,16 @@ class CampaignResourceIT {
         assertThat(campaignList).hasSize(databaseSizeBeforeUpdate);
         Campaign testCampaign = campaignList.get(campaignList.size() - 1);
         assertThat(testCampaign.getName()).isEqualTo(UPDATED_NAME);
-        assertThat(testCampaign.getChannel()).isEqualTo(UPDATED_CHANNEL);
-        assertThat(testCampaign.getSchedule()).isEqualTo(DEFAULT_SCHEDULE);
-        assertThat(testCampaign.getStartDate()).isEqualTo(UPDATED_START_DATE);
-        assertThat(testCampaign.getEndDate()).isEqualTo(DEFAULT_END_DATE);
+        assertThat(testCampaign.getVertial()).isEqualTo(UPDATED_VERTIAL);
+        assertThat(testCampaign.getChannel()).isEqualTo(DEFAULT_CHANNEL);
+        assertThat(testCampaign.getSchedule()).isEqualTo(UPDATED_SCHEDULE);
+        assertThat(testCampaign.getStartDate()).isEqualTo(DEFAULT_START_DATE);
+        assertThat(testCampaign.getEndDate()).isEqualTo(UPDATED_END_DATE);
         assertThat(testCampaign.getIsActive()).isEqualTo(UPDATED_IS_ACTIVE);
         assertThat(testCampaign.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
-        assertThat(testCampaign.getCreatedOn()).isEqualTo(UPDATED_CREATED_ON);
+        assertThat(testCampaign.getCreatedOn()).isEqualTo(DEFAULT_CREATED_ON);
         assertThat(testCampaign.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
-        assertThat(testCampaign.getUpdatedOn()).isEqualTo(DEFAULT_UPDATED_ON);
+        assertThat(testCampaign.getUpdatedOn()).isEqualTo(UPDATED_UPDATED_ON);
     }
 
     @Test
@@ -404,6 +417,7 @@ class CampaignResourceIT {
 
         partialUpdatedCampaign
             .name(UPDATED_NAME)
+            .vertial(UPDATED_VERTIAL)
             .channel(UPDATED_CHANNEL)
             .schedule(UPDATED_SCHEDULE)
             .startDate(UPDATED_START_DATE)
@@ -427,6 +441,7 @@ class CampaignResourceIT {
         assertThat(campaignList).hasSize(databaseSizeBeforeUpdate);
         Campaign testCampaign = campaignList.get(campaignList.size() - 1);
         assertThat(testCampaign.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testCampaign.getVertial()).isEqualTo(UPDATED_VERTIAL);
         assertThat(testCampaign.getChannel()).isEqualTo(UPDATED_CHANNEL);
         assertThat(testCampaign.getSchedule()).isEqualTo(UPDATED_SCHEDULE);
         assertThat(testCampaign.getStartDate()).isEqualTo(UPDATED_START_DATE);

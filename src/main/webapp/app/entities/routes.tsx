@@ -12,6 +12,8 @@ import FilterMetadata from './filter-metadata';
 import FilterSourceMapping from './filter-source-mapping';
 import FilterPossibleValue from './filter-possible-value';
 import SegmentFilter from './segment-filter';
+import ApprovalAuthority from './approval-authority';
+import ApprovalStatus from './approval-status';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -28,6 +30,8 @@ export default () => {
         <Route path="filter-source-mapping/*" element={<FilterSourceMapping />} />
         <Route path="filter-possible-value/*" element={<FilterPossibleValue />} />
         <Route path="segment-filter/*" element={<SegmentFilter />} />
+        <Route path="approval-authority/*" element={<ApprovalAuthority />} />
+        <Route path="approval-status/*" element={<ApprovalStatus />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

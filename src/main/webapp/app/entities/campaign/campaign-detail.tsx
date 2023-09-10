@@ -39,6 +39,12 @@ export const CampaignDetail = () => {
           </dt>
           <dd>{campaignEntity.name}</dd>
           <dt>
+            <span id="vertial">
+              <Translate contentKey="marketingCampaignManagerApp.campaign.vertial">Vertial</Translate>
+            </span>
+          </dt>
+          <dd>{campaignEntity.vertial}</dd>
+          <dt>
             <span id="channel">
               <Translate contentKey="marketingCampaignManagerApp.campaign.channel">Channel</Translate>
             </span>
@@ -100,6 +106,10 @@ export const CampaignDetail = () => {
           <dd>
             {campaignEntity.updatedOn ? <TextFormat value={campaignEntity.updatedOn} type="date" format={APP_LOCAL_DATE_FORMAT} /> : null}
           </dd>
+          <dt>
+            <Translate contentKey="marketingCampaignManagerApp.campaign.approvalStatus">Approval Status</Translate>
+          </dt>
+          <dd>{campaignEntity.approvalStatus ? campaignEntity.approvalStatus.id : ''}</dd>
           <dt>
             <Translate contentKey="marketingCampaignManagerApp.campaign.segment">Segment</Translate>
           </dt>

@@ -7,6 +7,8 @@
     "buildTool": "maven",
     "clientFramework": "react",
     "clientPackageManager": "npm",
+    "creationTimestamp": 1694346040999,
+    "devDatabaseType": "h2Disk",
     "devServerPort": 9060,
     "enableSwaggerCodegen": true,
     "entities": [
@@ -18,12 +20,14 @@
       "FilterMetadata",
       "FilterSourceMapping",
       "FilterPossibleValue",
-      "SegmentFilter"
+      "SegmentFilter",
+      "ApprovalAuthority",
+      "ApprovalStatus"
     ],
     "jhipsterVersion": "8.0.0-beta.3",
     "jwtSecretKey": "ZmZmZmJmMmRiMmNkYWVlMTdlZmJmNjBmMjIyMzA1M2U3MWNhMDRlZDgwYmNlOTVhNWMzNjRhZjRmNDYyZDU3ZTkxOWQ2YTRmOTNjMWJhZTQ1NWY1NWUzZTRlMjcyNDhkYTY4MWM2NDU2YWNlOGE1MzcyNTBkMmFlNWNkNjczNGM=",
     "languages": ["en", "bn", "hi"],
-    "lastLiquibaseTimestamp": 1694342347000,
+    "lastLiquibaseTimestamp": 1694346042000,
     "nativeLanguage": "en",
     "packageFolder": "com/marketing/campaign",
     "packageName": "com.marketing.campaign",

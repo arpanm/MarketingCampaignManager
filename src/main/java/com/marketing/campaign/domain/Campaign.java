@@ -3,6 +3,7 @@ package com.marketing.campaign.domain;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.marketing.campaign.domain.enumeration.ChannelType;
 import com.marketing.campaign.domain.enumeration.ScheduleType;
+import com.marketing.campaign.domain.enumeration.VerticalType;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -29,6 +30,10 @@ public class Campaign implements Serializable {
 
     @Column(name = "name")
     private String name;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "vertial")
+    private VerticalType vertial;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "channel")
@@ -58,6 +63,11 @@ public class Campaign implements Serializable {
 
     @Column(name = "updated_on")
     private LocalDate updatedOn;
+
+    @JsonIgnoreProperties(value = { "approvedBy", "campaign" }, allowSetters = true)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(unique = true)
+    private ApprovalStatus approvalStatus;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "campaign")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -98,6 +108,19 @@ public class Campaign implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public VerticalType getVertial() {
+        return this.vertial;
+    }
+
+    public Campaign vertial(VerticalType vertial) {
+        this.setVertial(vertial);
+        return this;
+    }
+
+    public void setVertial(VerticalType vertial) {
+        this.vertial = vertial;
     }
 
     public ChannelType getChannel() {
@@ -217,6 +240,19 @@ public class Campaign implements Serializable {
         this.updatedOn = updatedOn;
     }
 
+    public ApprovalStatus getApprovalStatus() {
+        return this.approvalStatus;
+    }
+
+    public void setApprovalStatus(ApprovalStatus approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
+    public Campaign approvalStatus(ApprovalStatus approvalStatus) {
+        this.setApprovalStatus(approvalStatus);
+        return this;
+    }
+
     public Set<Events> getEvents() {
         return this.events;
     }
@@ -299,6 +335,7 @@ public class Campaign implements Serializable {
         return "Campaign{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
+            ", vertial='" + getVertial() + "'" +
             ", channel='" + getChannel() + "'" +
             ", schedule='" + getSchedule() + "'" +
             ", startDate='" + getStartDate() + "'" +

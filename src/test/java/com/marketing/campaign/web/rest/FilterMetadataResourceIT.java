@@ -38,6 +38,9 @@ class FilterMetadataResourceIT {
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_NAME = "BBBBBBBBBB";
 
+    private static final String DEFAULT_DESC = "AAAAAAAAAA";
+    private static final String UPDATED_DESC = "BBBBBBBBBB";
+
     private static final FilterType DEFAULT_FILTER_TYPE = FilterType.SingleSelect;
     private static final FilterType UPDATED_FILTER_TYPE = FilterType.MultiSelect;
 
@@ -88,6 +91,7 @@ class FilterMetadataResourceIT {
     public static FilterMetadata createEntity(EntityManager em) {
         FilterMetadata filterMetadata = new FilterMetadata()
             .name(DEFAULT_NAME)
+            .desc(DEFAULT_DESC)
             .filterType(DEFAULT_FILTER_TYPE)
             .uiType(DEFAULT_UI_TYPE)
             .isActive(DEFAULT_IS_ACTIVE)
@@ -107,6 +111,7 @@ class FilterMetadataResourceIT {
     public static FilterMetadata createUpdatedEntity(EntityManager em) {
         FilterMetadata filterMetadata = new FilterMetadata()
             .name(UPDATED_NAME)
+            .desc(UPDATED_DESC)
             .filterType(UPDATED_FILTER_TYPE)
             .uiType(UPDATED_UI_TYPE)
             .isActive(UPDATED_IS_ACTIVE)
@@ -139,6 +144,7 @@ class FilterMetadataResourceIT {
         assertThat(filterMetadataList).hasSize(databaseSizeBeforeCreate + 1);
         FilterMetadata testFilterMetadata = filterMetadataList.get(filterMetadataList.size() - 1);
         assertThat(testFilterMetadata.getName()).isEqualTo(DEFAULT_NAME);
+        assertThat(testFilterMetadata.getDesc()).isEqualTo(DEFAULT_DESC);
         assertThat(testFilterMetadata.getFilterType()).isEqualTo(DEFAULT_FILTER_TYPE);
         assertThat(testFilterMetadata.getUiType()).isEqualTo(DEFAULT_UI_TYPE);
         assertThat(testFilterMetadata.getIsActive()).isEqualTo(DEFAULT_IS_ACTIVE);
@@ -182,6 +188,7 @@ class FilterMetadataResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(filterMetadata.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
+            .andExpect(jsonPath("$.[*].desc").value(hasItem(DEFAULT_DESC)))
             .andExpect(jsonPath("$.[*].filterType").value(hasItem(DEFAULT_FILTER_TYPE.toString())))
             .andExpect(jsonPath("$.[*].uiType").value(hasItem(DEFAULT_UI_TYPE.toString())))
             .andExpect(jsonPath("$.[*].isActive").value(hasItem(DEFAULT_IS_ACTIVE.booleanValue())))
@@ -204,6 +211,7 @@ class FilterMetadataResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(filterMetadata.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
+            .andExpect(jsonPath("$.desc").value(DEFAULT_DESC))
             .andExpect(jsonPath("$.filterType").value(DEFAULT_FILTER_TYPE.toString()))
             .andExpect(jsonPath("$.uiType").value(DEFAULT_UI_TYPE.toString()))
             .andExpect(jsonPath("$.isActive").value(DEFAULT_IS_ACTIVE.booleanValue()))
@@ -234,6 +242,7 @@ class FilterMetadataResourceIT {
         em.detach(updatedFilterMetadata);
         updatedFilterMetadata
             .name(UPDATED_NAME)
+            .desc(UPDATED_DESC)
             .filterType(UPDATED_FILTER_TYPE)
             .uiType(UPDATED_UI_TYPE)
             .isActive(UPDATED_IS_ACTIVE)
@@ -256,6 +265,7 @@ class FilterMetadataResourceIT {
         assertThat(filterMetadataList).hasSize(databaseSizeBeforeUpdate);
         FilterMetadata testFilterMetadata = filterMetadataList.get(filterMetadataList.size() - 1);
         assertThat(testFilterMetadata.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testFilterMetadata.getDesc()).isEqualTo(UPDATED_DESC);
         assertThat(testFilterMetadata.getFilterType()).isEqualTo(UPDATED_FILTER_TYPE);
         assertThat(testFilterMetadata.getUiType()).isEqualTo(UPDATED_UI_TYPE);
         assertThat(testFilterMetadata.getIsActive()).isEqualTo(UPDATED_IS_ACTIVE);
@@ -346,10 +356,11 @@ class FilterMetadataResourceIT {
 
         partialUpdatedFilterMetadata
             .name(UPDATED_NAME)
+            .desc(UPDATED_DESC)
             .filterType(UPDATED_FILTER_TYPE)
-            .uiType(UPDATED_UI_TYPE)
-            .createdBy(UPDATED_CREATED_BY)
-            .updatedBy(UPDATED_UPDATED_BY);
+            .isActive(UPDATED_IS_ACTIVE)
+            .createdOn(UPDATED_CREATED_ON)
+            .updatedOn(UPDATED_UPDATED_ON);
 
         restFilterMetadataMockMvc
             .perform(
@@ -364,13 +375,14 @@ class FilterMetadataResourceIT {
         assertThat(filterMetadataList).hasSize(databaseSizeBeforeUpdate);
         FilterMetadata testFilterMetadata = filterMetadataList.get(filterMetadataList.size() - 1);
         assertThat(testFilterMetadata.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testFilterMetadata.getDesc()).isEqualTo(UPDATED_DESC);
         assertThat(testFilterMetadata.getFilterType()).isEqualTo(UPDATED_FILTER_TYPE);
-        assertThat(testFilterMetadata.getUiType()).isEqualTo(UPDATED_UI_TYPE);
-        assertThat(testFilterMetadata.getIsActive()).isEqualTo(DEFAULT_IS_ACTIVE);
-        assertThat(testFilterMetadata.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
-        assertThat(testFilterMetadata.getCreatedOn()).isEqualTo(DEFAULT_CREATED_ON);
-        assertThat(testFilterMetadata.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
-        assertThat(testFilterMetadata.getUpdatedOn()).isEqualTo(DEFAULT_UPDATED_ON);
+        assertThat(testFilterMetadata.getUiType()).isEqualTo(DEFAULT_UI_TYPE);
+        assertThat(testFilterMetadata.getIsActive()).isEqualTo(UPDATED_IS_ACTIVE);
+        assertThat(testFilterMetadata.getCreatedBy()).isEqualTo(DEFAULT_CREATED_BY);
+        assertThat(testFilterMetadata.getCreatedOn()).isEqualTo(UPDATED_CREATED_ON);
+        assertThat(testFilterMetadata.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
+        assertThat(testFilterMetadata.getUpdatedOn()).isEqualTo(UPDATED_UPDATED_ON);
     }
 
     @Test
@@ -387,6 +399,7 @@ class FilterMetadataResourceIT {
 
         partialUpdatedFilterMetadata
             .name(UPDATED_NAME)
+            .desc(UPDATED_DESC)
             .filterType(UPDATED_FILTER_TYPE)
             .uiType(UPDATED_UI_TYPE)
             .isActive(UPDATED_IS_ACTIVE)
@@ -408,6 +421,7 @@ class FilterMetadataResourceIT {
         assertThat(filterMetadataList).hasSize(databaseSizeBeforeUpdate);
         FilterMetadata testFilterMetadata = filterMetadataList.get(filterMetadataList.size() - 1);
         assertThat(testFilterMetadata.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testFilterMetadata.getDesc()).isEqualTo(UPDATED_DESC);
         assertThat(testFilterMetadata.getFilterType()).isEqualTo(UPDATED_FILTER_TYPE);
         assertThat(testFilterMetadata.getUiType()).isEqualTo(UPDATED_UI_TYPE);
         assertThat(testFilterMetadata.getIsActive()).isEqualTo(UPDATED_IS_ACTIVE);

@@ -19,6 +19,7 @@
       },
       "id": "ID",
       "name": "Name",
+      "vertial": "Vertial",
       "channel": "Channel",
       "schedule": "Schedule",
       "startDate": "Start Date",
@@ -28,6 +29,7 @@
       "createdOn": "Created On",
       "updatedBy": "Updated By",
       "updatedOn": "Updated On",
+      "approvalStatus": "Approval Status",
       "events": "Events",
       "segment": "Segment",
       "template": "Template"

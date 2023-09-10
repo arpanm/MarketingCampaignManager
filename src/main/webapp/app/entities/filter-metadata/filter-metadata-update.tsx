@@ -112,6 +112,13 @@ export const FilterMetadataUpdate = () => {
                 type="text"
               />
               <ValidatedField
+                label={translate('marketingCampaignManagerApp.filterMetadata.desc')}
+                id="filter-metadata-desc"
+                name="desc"
+                data-cy="desc"
+                type="text"
+              />
+              <ValidatedField
                 label={translate('marketingCampaignManagerApp.filterMetadata.filterType')}
                 id="filter-metadata-filterType"
                 name="filterType"

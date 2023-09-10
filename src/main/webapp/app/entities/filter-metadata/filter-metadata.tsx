@@ -136,6 +136,10 @@ export const FilterMetadata = () => {
                     <Translate contentKey="marketingCampaignManagerApp.filterMetadata.name">Name</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('name')} />
                   </th>
+                  <th className="hand" onClick={sort('desc')}>
+                    <Translate contentKey="marketingCampaignManagerApp.filterMetadata.desc">Desc</Translate>{' '}
+                    <FontAwesomeIcon icon={getSortIconByFieldName('desc')} />
+                  </th>
                   <th className="hand" onClick={sort('filterType')}>
                     <Translate contentKey="marketingCampaignManagerApp.filterMetadata.filterType">Filter Type</Translate>{' '}
                     <FontAwesomeIcon icon={getSortIconByFieldName('filterType')} />
@@ -180,6 +184,7 @@ export const FilterMetadata = () => {
                       </Button>
                     </td>
                     <td>{filterMetadata.name}</td>
+                    <td>{filterMetadata.desc}</td>
                     <td>
                       <Translate contentKey={`marketingCampaignManagerApp.FilterType.${filterMetadata.filterType}`} />
                     </td>

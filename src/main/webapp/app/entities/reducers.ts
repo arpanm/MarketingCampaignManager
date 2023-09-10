@@ -7,6 +7,8 @@ import filterMetadata from 'app/entities/filter-metadata/filter-metadata.reducer
 import filterSourceMapping from 'app/entities/filter-source-mapping/filter-source-mapping.reducer';
 import filterPossibleValue from 'app/entities/filter-possible-value/filter-possible-value.reducer';
 import segmentFilter from 'app/entities/segment-filter/segment-filter.reducer';
+import approvalAuthority from 'app/entities/approval-authority/approval-authority.reducer';
+import approvalStatus from 'app/entities/approval-status/approval-status.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -19,6 +21,8 @@ const entitiesReducers = {
   filterSourceMapping,
   filterPossibleValue,
   segmentFilter,
+  approvalAuthority,
+  approvalStatus,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

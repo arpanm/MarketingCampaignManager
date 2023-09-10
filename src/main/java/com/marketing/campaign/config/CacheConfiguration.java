@@ -63,6 +63,8 @@ public class CacheConfiguration {
             createCache(cm, com.marketing.campaign.domain.FilterPossibleValue.class.getName());
             createCache(cm, com.marketing.campaign.domain.SegmentFilter.class.getName());
             createCache(cm, com.marketing.campaign.domain.SegmentFilter.class.getName() + ".values");
+            createCache(cm, com.marketing.campaign.domain.ApprovalAuthority.class.getName());
+            createCache(cm, com.marketing.campaign.domain.ApprovalStatus.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
